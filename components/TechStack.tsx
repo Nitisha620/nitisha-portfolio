@@ -1,26 +1,12 @@
+"use client";
+import { motion } from "framer-motion";
+
 export default function TechStack() {
-  const tech = [
-    "Flutter",
-    "Dart",
-    "Firebase",
-    "REST APIs",
-    "Spring Boot",
-    "Java",
-    "Git",
-    "Android",
-  ];
-
   const techStack = {
-    Mobile: ["Flutter", "Dart", "React Native (Learning)"],
-
-    Backend: ["Spring Boot", "Java", "REST APIs", "JWT Authentication"],
-
-    Architecture: ["Bloc State Management", "Clean Architecture"],
-
     Tools: ["Git", "Postman", "Android Studio", "VS Code"],
 
     languages: ["Dart", "Java", "Python", "C", "C++", "SQL", "Unix Shell"],
-    framerwork: ["Flutter", "Angular", "Spring boot", "Google Maps SDK"],
+    framerwork: ["Flutter", "Spring boot", "Google Maps SDK"],
     database: ["MySQL", "MongoDB"],
     services: [
       "AWS (Lambda, EC2, S3)",
@@ -34,12 +20,18 @@ export default function TechStack() {
       "PuTTY",
       "Jira",
       "Postman",
-      "Google play console",
-      "App store",
+      "Google Play Console",
+      "App store Connect",
     ],
   };
   return (
-    <section id="tech" className="py-24">
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      id="tech"
+      className="py-24"
+    >
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold mb-10">Tech Stack</h2>
 
@@ -103,6 +95,6 @@ export default function TechStack() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

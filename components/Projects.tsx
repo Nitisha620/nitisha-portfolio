@@ -1,6 +1,15 @@
+"use client";
+import { motion } from "framer-motion";
+
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-8 ">
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      id="projects"
+      className="py-24 px-8 "
+    >
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center">Projects</h2>
         <p className="text-gray-600 text-center mt-4">
@@ -8,7 +17,7 @@ export default function Projects() {
           Some things I've built
         </p>
         <div className="grid md:grid-cols-2 gap-8 mt-12">
-          <div className="p-6 border rounded-xl hover:shadow-lg transition">
+          <div className="p-6 border rounded-xl hover:shadow-lg transition duration-300 hover:translate-y-2">
             <h3 className="text-xl font-semibold">Weather Forecast App</h3>
             <p className="text-gray-600 mt-2">
               Real-time weather application built with Flutter using Bloc state
@@ -24,30 +33,30 @@ export default function Projects() {
               </a>
             </div>
           </div>
-        
-        <div className="p-6 border rounded-xl hover:shadow-lg transition">
-          <h3 className="text-xl font-semibold">Route Tracker</h3>
 
-          <p className="text-gray-600 mt-2">
-            Real-time vehicle tracking and route visualization system using
-            Google Maps and Riverpod state management.
-          </p>
+          <div className="p-6 border rounded-xl hover:shadow-lg transition duration-300 hover:translate-y-2">
+            <h3 className="text-xl font-semibold">Route Tracker</h3>
 
-          <p className="text-sm text-gray-500 mt-3">
-            Flutter • Google Maps • Riverpod
-          </p>
+            <p className="text-gray-600 mt-2">
+              Real-time vehicle tracking and route visualization system using
+              Google Maps and Riverpod state management.
+            </p>
 
-          <div className="mt-4 flex gap-4">
-            <a
-              href="https://github.com/Nitisha620/flaperon"
-              className="text-black font-medium"
-            >
-              GitHub →
-            </a>
+            <p className="text-sm text-gray-500 mt-3">
+              Flutter • Google Maps • Riverpod
+            </p>
+
+            <div className="mt-4 flex gap-4">
+              <a
+                href="https://github.com/Nitisha620/flaperon"
+                className="text-black font-medium"
+              >
+                GitHub →
+              </a>
+            </div>
           </div>
         </div>
-        </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
