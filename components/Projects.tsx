@@ -12,11 +12,23 @@ export default function Projects() {
     >
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center">Projects</h2>
-        <p className="text-gray-600 text-center mt-4">
-          {" "}
-          Some things I've built
-        </p>
+        <p className="text-gray-600 text-center mt-4">Some things I've built</p>
         <div className="grid md:grid-cols-2 gap-8 mt-12">
+          <div className="rounded-xl border overflow-hidden">
+            <div className="h-56 bg-gray-900">
+              <img className="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+            </div>
+            <div className="p-6 space-y-4">
+              <h3></h3>
+              <p></p>
+              <div className="flex flex-wrap gap-2">
+                <span>Flutter</span>
+                <span>Bloc</span>
+                <span>API</span>
+              </div>
+              <button>Github →</button>
+            </div>
+          </div>
           <div className="p-6 border rounded-xl hover:shadow-lg transition duration-300 hover:translate-y-2">
             <h3 className="text-xl font-semibold">Weather Forecast App</h3>
             <p className="text-gray-600 mt-2">
