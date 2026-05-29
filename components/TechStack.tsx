@@ -2,96 +2,104 @@
 import { motion } from "framer-motion";
 
 export default function TechStack() {
-  const techStack = {
-    Tools: ["Git", "Postman", "Android Studio", "VS Code"],
+  const techStack = [
+    {
+      title: "Languages",
+      items: ["Dart", "Java", "Python", "C++", "SQL"],
+      icon: "💻",
+    },
+    {
+      title: "Frontend & Mobile",
+      items: ["Flutter", "React", "React Native"],
+      icon: "📱",
+    },
+    {
+      title: "Backend",
+      items: ["Spring Boot", "Spring Security", "REST APIs", "PartyKit", "WebSockets"],
+      icon: "⚙️",
+    },
+    {
+      title: "Databases",
+      items: ["MySQL", "MongoDB", "Supabase"],
+      icon: "🗄️",
+    },
+    {
+      title: "Cloud & DevOps",
+      items: ["AWS EC2", "AWS S3", "AWS Lambda", "AWS CloudFront", "CI/CD", "Shorebird OTA"],
+      icon: "☁️",
+    },
+    {
+      title: "Maps & Real-time",
+      items: ["Google Maps SDK", "WebSockets", "FCM", "OneSignal"],
+      icon: "📡",
+    },
+    {
+      title: "AI & APIs",
+      items: ["Gemini API", "Chrome Extension APIs", "REST APIs"],
+      icon: "🤖",
+    },
+    {
+      title: "Tools",
+      items: [
+        "Git", "Bitbucket", "Postman", "Jira", "PuTTY",
+        "VS Code", "Android Studio", "Play Console", "App Store Connect",
+      ],
+      icon: "🛠️",
+    },
+  ];
 
-    languages: ["Dart", "Java", "Python", "C", "C++", "SQL", "Unix Shell"],
-    framerwork: ["Flutter", "Spring boot", "Google Maps SDK"],
-    database: ["MySQL", "MongoDB"],
-    services: [
-      "AWS (Lambda, EC2, S3)",
-      "Firebase Cloud Messaging (FCM)",
-      "OneSignal",
-      "Shorebird",
-    ],
-    tools: [
-      "Git",
-      "Bitbucket",
-      "PuTTY",
-      "Jira",
-      "Postman",
-      "Google Play Console",
-      "App store Connect",
-    ],
-  };
   return (
     <motion.section
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       id="tech"
-      className="py-24"
+      className="relative py-28 px-6 bg-white overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-10">Tech Stack</h2>
+      {/* Background Glow */}
+      <div className="absolute left-0 bottom-0 w-[400px] h-[400px] bg-indigo-300/20 blur-[120px] rounded-full -z-10" />
+      <div className="absolute right-0 top-0 w-[300px] h-[300px] bg-blue-200/20 blur-[100px] rounded-full -z-10" />
 
-        <h3 className="font-semibold">Programming Languages</h3>
-        <div className="mt-2 flex flex-wrap gap-4">
-          {techStack.languages.map((item) => (
-            <span
-              key={item}
-              className="px-4 py-2 bg-gray-100 rounded-lg text-gray-800"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
+      <div className="max-w-6xl mx-auto">
 
-        <h3 className="mt-4 font-semibold">Frameworks</h3>
-        <div className="mt-2 flex flex-wrap gap-4">
-          {techStack.framerwork.map((item) => (
-            <span
-              key={item}
-              className="px-4 py-2 bg-gray-100 rounded-lg text-gray-800"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
+        {/* Heading */}
+        <h2 className="text-4xl font-extrabold text-center mb-4">
+          Tech{" "}
+          <span className="text-indigo-500">Stack</span>
+        </h2>
 
-        <h3 className="mt-4 font-semibold">Database</h3>
-        <div className="mt-2 flex flex-wrap gap-4">
-          {techStack.database.map((item) => (
-            <span
-              key={item}
-              className="px-4 py-2 bg-gray-100 rounded-lg text-gray-800"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
+        <p className="text-center text-gray-500 mb-14">
+          Tools and technologies I use to build scalable, production-grade systems
+        </p>
 
-        <h3 className="mt-4 font-semibold">Cloud and Services</h3>
-        <div className="mt-2 flex flex-wrap gap-4">
-          {techStack.services.map((item) => (
-            <span
-              key={item}
-              className="px-4 py-2 bg-gray-100 rounded-lg text-gray-800"
+        {/* Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {techStack.map((section, index) => (
+            <motion.div
+              key={section.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.07 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-2xl bg-gray-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              {item}
-            </span>
-          ))}
-        </div>
+              {/* Title */}
+              <h3 className="text-base font-semibold mb-4 flex items-center gap-2">
+                <span>{section.icon}</span> {section.title}
+              </h3>
 
-        <h3 className="mt-4 font-semibold">Tools</h3>
-        <div className="mt-2 flex flex-wrap gap-4">
-          {techStack.tools.map((item) => (
-            <span
-              key={item}
-              className="px-4 py-2 bg-gray-100 rounded-lg text-gray-800"
-            >
-              {item}
-            </span>
+              {/* Items */}
+              <div className="flex flex-wrap gap-2">
+                {section.items.map((item) => (
+                  <span
+                    key={item}
+                    className="px-3 py-1.5 text-xs bg-white border border-gray-200 rounded-full hover:bg-indigo-50 hover:border-indigo-200 transition"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
